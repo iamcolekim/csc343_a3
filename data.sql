@@ -121,6 +121,21 @@ INSERT INTO Seat (section_id, seat_label, is_accessible) VALUES
     (20, 'B1', FALSE), (20, 'B2', FALSE), (20, 'B3', FALSE),
     (20, 'B4', FALSE), (20, 'B5', FALSE);
 
+-- Extra seats for Venue 3 to allow ≥50 ticket sales (q1)
+INSERT INTO Seat (section_id, seat_label, is_accessible)
+SELECT
+    5,
+    'FX' || s,
+    FALSE
+FROM generate_series(6, 40) AS s;
+
+INSERT INTO Seat (section_id, seat_label, is_accessible)
+SELECT
+    6,
+    'BX' || s,
+    FALSE
+FROM generate_series(6, 40) AS s;
+
 
 -- ============================================================
 -- Concerts

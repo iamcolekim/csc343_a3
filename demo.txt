@@ -1,0 +1,88 @@
+dbsrv1:~/csc343db/csc343_a3/csc343_a3$ psql csc343h-kimcole
+psql (16.13 (Ubuntu 16.13-0ubuntu0.24.04.1))
+Type "help" for help.
+
+csc343h-kimcole=> \i runner.txt
+-------------------- Loading schema and data: --------------------
+
+psql:schema.ddl:28: NOTICE:  drop cascades to 8 other objects
+DETAIL:  drop cascades to table ticketschema.owner
+drop cascades to table ticketschema.venue
+drop cascades to table ticketschema.section
+drop cascades to table ticketschema.seat
+drop cascades to table ticketschema.concert
+drop cascades to table ticketschema.appuser
+drop cascades to table ticketschema.ticketprice
+drop cascades to table ticketschema.ticket
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+SET
+INSERT 0 5
+INSERT 0 10
+INSERT 0 20
+INSERT 0 12
+INSERT 0 90
+INSERT 0 35
+INSERT 0 35
+INSERT 0 3
+INSERT 0 3
+INSERT 0 6
+INSERT 0 10
+INSERT 0 55
+
+-------------------- Query 1: -----------------------------------
+
+ concert_id |  concert_name  | tickets_sold | total_revenue | percent_sold
+------------+----------------+--------------+---------------+--------------
+          1 | Silent Night   |            0 |             0 |         0.00
+          2 | Indie Showcase |           10 |       1000.00 |       100.00
+          3 | Mega Pop Tour  |           55 |       8250.00 |        68.75
+(3 rows)
+
+
+-------------------- Query 2: -----------------------------------
+
+ owner_id |   owner_name    | num_venues
+----------+-----------------+------------
+        1 | Big Live Nation |          3
+        2 | Indie Events Co |          2
+        3 | City of Toronto |          2
+        4 | Music Group Inc |          2
+        5 | Private Owner   |          1
+(5 rows)
+
+
+-------------------- Query 3: -----------------------------------
+
+ venue_id |   venue_name    | total_seats | percent_accessible
+----------+-----------------+-------------+--------------------
+        1 | Maple Hall      |          12 |              33.33
+        2 | Harbour Theatre |          10 |              10.00
+        3 | Sky Arena       |          80 |               1.25
+        4 | Indie Loft      |          10 |              10.00
+        5 | Civic Centre    |          10 |              10.00
+        6 | Sound Dome      |          10 |              10.00
+        7 | Open Air Park   |          10 |              10.00
+        8 | Echo Hall       |          10 |              10.00
+        9 | Metro Stage     |          10 |              10.00
+       10 | North End Hall  |          10 |              10.00
+(10 rows)
+
+
+-------------------- Query 4: -----------------------------------
+
+ username | tickets_purchased
+----------+-------------------
+ superfan |                37
+(1 row)
+
+csc343h-kimcole=> \q
